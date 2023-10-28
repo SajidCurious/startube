@@ -15,6 +15,19 @@ import { Context } from "../context/contextApi";
 import Loader from "../shared/loader";
 
 const Header = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { loading, mobileMenu, setMobileMenu } = useContext(Context);
+  const navigate = useNavigate();
+
+  const searchQueryHandler = (event) => {
+    if (
+      (event?.key === "Enter" || event === "SearchButton") &&
+      searchQuery?.length > 0
+    ) {
+      navigate(`/searchResult/${searchQuery}`);
+    }
+  };
+
   return <div>Header</div>;
 };
 
