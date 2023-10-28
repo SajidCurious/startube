@@ -50,9 +50,11 @@ const Header = () => {
           </div>
         )}
         <Link to="/" className="flex h-5 items-center">
-          <p className="h-full hidden dark:md:block text-white font-semibold text-2xl text-center">
-            STARTUBE
-          </p>
+          <img
+            className="h-full hidden dark:md:block"
+            src={ytLogo}
+            alt="Youtube"
+          />
           <img className="h-full md:hidden" src={ytLogoMobile} alt="Youtube" />
         </Link>
       </div>
