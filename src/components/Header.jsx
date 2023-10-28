@@ -50,11 +50,9 @@ const Header = () => {
           </div>
         )}
         <Link to="/" className="flex h-5 items-center">
-          <img
-            className="h-full hidden dark:md:block"
-            src={ytLogo}
-            alt="Youtube"
-          />
+          <p className="h-full hidden dark:md:block text-white font-semibold text-2xl text-center">
+            STARTUBE
+          </p>
           <img className="h-full md:hidden" src={ytLogoMobile} alt="Youtube" />
         </Link>
       </div>
@@ -65,7 +63,7 @@ const Header = () => {
           </div>
           <input
             type="text"
-            className="bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-44 md:group-focus-within:pl-0 md:w-64 lg:w-[500px]"
+            className="bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-20 md:group-focus-within:pl-0 md:w-64 lg:w-[500px]"
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyUp={searchQueryHandler}
             value={searchQuery}
