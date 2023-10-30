@@ -38,7 +38,7 @@ const LeftNav = () => {
         })}
         <hr className="my-5 border-white/[0.2]" />
         <div className="text-white/[0.5] text-[12px]">
-          Clone by: JS Dev Hindi
+          <p className="font-semibold">Made by Mohammed Sajid</p>
         </div>
       </div>
     </div>
