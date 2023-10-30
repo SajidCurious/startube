@@ -11,6 +11,19 @@ const LeftNav = () => {
 
   const navigate = useNavigate();
 
+  const clickHandler = (name, type) => {
+    switch (type) {
+      case "category":
+        return setSelectedCategory(name);
+      case "home":
+        return setSelectedCategory(name);
+      case "menu":
+        return false;
+      default:
+        break;
+    }
+  };
+
   return (
     <div
       className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
