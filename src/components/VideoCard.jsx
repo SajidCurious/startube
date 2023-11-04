@@ -34,9 +34,11 @@ const VideoCard = ({ video }) => {
               )}
             </span>
             <div className="flex text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden">
-              <span></span>
-              <span className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1"></span>
-              <span className="truncate"></span>
+              <span>{`${abbreviateNumber(video?.stats?.views, 2)}`}</span>
+              <span className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1">
+                .
+              </span>
+              <span className="truncate">{video?.publishedTimeText}</span>
             </div>
           </div>
         </div>
