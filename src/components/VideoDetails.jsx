@@ -5,7 +5,7 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 import { AiOutlineLike } from "react-icons/ai";
 import { abbreviateNumber } from "js-abbreviation-number";
 
-import { fetchDataFromApi } from "../utils/api";
+import { fetchDataFromAPI } from "../utils/api";
 import { Context } from "../context/contextApi";
 import SuggestionVideoCard from "./SuggestionVideoCard";
 
@@ -23,7 +23,7 @@ const VideoDetails = () => {
 
   const fetchVideoDetails = () => {
     setLoading(true);
-    fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
+    fetchDataFromAPI(`video/details/?id=${id}`).then((res) => {
       console.log(res);
       setVideo(res);
       setLoading(false);
@@ -32,7 +32,7 @@ const VideoDetails = () => {
 
   const fetchRelatedVideos = () => {
     setLoading(true);
-    fetchDataFromApi(`video/related-contents/?id=${id}`).then((res) => {
+    fetchDataFromAPI(`video/related-contents/?id=${id}`).then((res) => {
       console.log(res);
       setRelatedVideos(res);
       setLoading(false);
@@ -52,12 +52,17 @@ const VideoDetails = () => {
               playing={true}
             />
           </div>
-          <div className="text-white font-bold text-sm md:text-xl mt-4 line-clamp-2"></div>
+          <div className="text-white font-bold text-sm md:text-xl mt-4 line-clamp-2">
+            {video?.title}
+          </div>
           <div className="flex justify-between flex-col md:flex-row mt-4">
             <div className="flex">
               <div className="flex items-start">
                 <div className="flex h-11 w-11 rounded-full overflow-hidden">
-                  <img className="h-full w-full object-cover" />
+                  <img
+                    className="h-full w-full object-cover"
+                    src={video?.author?.avatar[0]?.url}
+                  />
                 </div>
               </div>
               <div className="flex flex-col ml-3">
