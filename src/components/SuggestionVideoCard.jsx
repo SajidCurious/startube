@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import VideoLength from "../shared/videoLength";
 
-const SuggestionVideoCard = () => {
+const SuggestionVideoCard = ({ video }) => {
   return (
     <Link to={`/video/${video?.videoId}`}>
       <div className="flex mb-3">
