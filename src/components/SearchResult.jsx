@@ -10,6 +10,15 @@ const SearchResult = () => {
   const [result, setResult] = useState();
   const { searchQuery } = useParams();
   const { setLoading } = useContext(Context);
+
+  const fetchSearchResults = () => {
+    setLoading(true);
+    fetchDataFromAPI(`search/?q=${searchQuery}`).then((res) => {
+      console.log(res);
+      setResult(res?.contents);
+      setLoading(false);
+    });
+  };
   return (
     <div className="flex flex-row h-[calc(100%-56px)]">
       <LeftNav />
