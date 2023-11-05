@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import SearchResult from "./components/SearchResult";
 import VideoDetails from "./components/VideoDetails";
-import Feed from "./components/feed";
+import Feed from "./components/Feed";
 import { AppContext } from "./context/contextApi";
 
 function App() {
